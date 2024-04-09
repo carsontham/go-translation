@@ -45,7 +45,7 @@ func RapidAPIKey(req *http.Request) (*http.Request, error) {
 
 // RapidAPIHost ...
 func RapidAPIHost(req *http.Request) (*http.Request, error) {
-	req.Header.Add(HeaderRapidAPIHost, "deep-translate1.p.rapidapi.com") //""google-translate1.p.rapidapi.com")
+	req.Header.Add(HeaderRapidAPIHost, "deep-translate1.p.rapidapi.com")
 	return req, nil
 }
 

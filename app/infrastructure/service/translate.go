@@ -30,8 +30,10 @@ func (c *Client) Translate(ctx context.Context, s string, target string) (string
 		req: translateForm,
 	}
 
+	fmt.Println("sending translation request...")
 	successful, err := c.httpClient.Call(ctx, api)
 	if successful {
+		fmt.Println("translation success")
 		return api.resp.Data.Translations.TranslatedText, nil
 	} else {
 		return "", err
@@ -66,8 +68,6 @@ func (api *translateAPI) ParseResponse(_ context.Context, _ *http.Request, resp 
 		return fmt.Errorf("%w, statusCode: %d, body: %s", errors.New("status not ok"), resp.StatusCode, resp.Body)
 	}
 	body, err := io.ReadAll(resp.Body)
-	h := string(body)
-	fmt.Println(h)
 	if err != nil {
 		return err
 	}

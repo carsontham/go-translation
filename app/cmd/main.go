@@ -1,21 +1,30 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"fmt"
 	"go-translation/app/infrastructure/service"
+	"os"
 )
 
 func main() {
 	url := "https://deep-translate1.p.rapidapi.com/language/translate/v2"
-	var input string
-	var target string
+	var input, target string
+
+	fmt.Print("Please enter the input: ")
+	inputScan := bufio.NewScanner(os.Stdin)
+	if inputScan.Scan() {
+		input = inputScan.Text()
+	}
+
+	fmt.Print("Please enter the language to translate to: ")
+	targetScan := bufio.NewScanner(os.Stdin)
+	if targetScan.Scan() {
+		target = targetScan.Text()
+	}
 
 	c := service.NewClient(url)
-	fmt.Print("Please enter the input: ")
-	fmt.Scanln(&input)
-	fmt.Print("Please enter the language to translate to: ")
-	fmt.Scanln(&target)
 
 	translated, err := c.Translate(context.Background(), input, target)
 	if err != nil {

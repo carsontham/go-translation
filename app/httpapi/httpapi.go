@@ -45,7 +45,9 @@ func (c caller) Call(ctx context.Context, api API) (successful bool, err error) 
 	defer func() {
 		if resp.Body != nil {
 			err := resp.Body.Close()
-			fmt.Println(err)
+			if err != nil {
+				fmt.Println(err, "here")
+			}
 		}
 	}()
 
