@@ -13,7 +13,7 @@ To run the application, navigate to the root directory and run the make command:
 ```
 make run
 ```
-## Some 2 letter languages code to play with:
+## Some 2 letter languages code to use with:
 1. English: en
 2. Spanish: es
 3. French: fr
