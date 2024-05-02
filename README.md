@@ -1,6 +1,6 @@
 # go-translation CLI
 
-This is a simple command-line interface (CLI) application that utilizes a client to call the Deep Translate API on RapidAPI. It allows you to translate text from one language to another using the Deep Translate service.
+This is a simple command-line interface HTTP Client to send request to the Deep Translate API on RapidAPI. It allows you to translate text from one language to another using the Deep Translate service.
 
 ## Prerequisites
 
