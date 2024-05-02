@@ -10,6 +10,7 @@ type translationClientConfig struct {
 	translateEndpoint string
 }
 
+// TODO
 func setUpTranslationClient(
 	t *testing.T,
 	config translationClientConfig,
